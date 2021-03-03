@@ -3,13 +3,10 @@ package es.aed.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import es.aed.dtos.CoinDto;
 import es.aed.dtos.HistoryDto;
-import es.aed.models.CoinModel;
 import es.aed.models.HistoryModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,9 +37,6 @@ public class HistoryController implements Initializable {
 	
 	@FXML
 	private ComboBox<Integer> idCoinComboBox;
-	
-//	@FXML
-//	private TextField dateTextField;
 	
 	@FXML
 	private DatePicker dateDatePicker;

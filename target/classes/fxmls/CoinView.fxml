@@ -2,9 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
@@ -21,7 +24,7 @@
                   <Insets right="5.0" />
                </HBox.margin>
             </Text>
-            <TextField fx:id="idCoinTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+            <TextField fx:id="idCoinTextField" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" HBox.hgrow="NEVER">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
@@ -46,26 +49,72 @@
                   <Insets right="5.0" />
                </HBox.margin>
             </TextField>
+            <Button fx:id="resetButton" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#onClickResetButton" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: DodgerBlue;" textFill="WHITE">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/imgs/reset.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
             <Button fx:id="addButton" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#onClickAddButton" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: green;" textFill="WHITE">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/imgs/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="updateButton" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#onClickUpdateButton" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: orange;" textFill="WHITE">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/imgs/update.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="deleteButton" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#onClickDeleteButton" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: red;" textFill="WHITE" />
+            <Button fx:id="deleteButton" maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#onClickDeleteButton" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: red;" textFill="WHITE">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/imgs/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </HBox>
       <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
          <children>
             <TableView fx:id="tableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
               <columns>
-                <TableColumn fx:id="fkidmoneda" editable="false" maxWidth="1.7976931348623157E308" minWidth="75.0" prefWidth="75.0" text="ID Moneda" />
-                <TableColumn fx:id="nombre" editable="false" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="150.0" text="Nombre" />
-                  <TableColumn fx:id="pais" editable="false" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="150.0" text="País" />
+                <TableColumn fx:id="idCoin" editable="false" maxWidth="1.7976931348623157E308" minWidth="75.0" prefWidth="75.0" text="ID Moneda" />
+                <TableColumn fx:id="name" editable="false" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="150.0" text="Nombre" />
+                <TableColumn fx:id="country" editable="false" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="150.0" text="País" />
               </columns>
             </TableView>
          </children>
